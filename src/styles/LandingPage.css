@@ -1,0 +1,134 @@
+/**
+    * ----------------------------------------
+    *  LandingPage.css
+    * ----------------------------------------
+*/
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-size: 100%;
+      line-height: 1.5;
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+    }
+
+    body {
+        font-family: Source Sans Pro;
+    }
+
+    .container {
+        padding: 0 20px; 
+        border: 1px solid yellow;
+        width: 100%;
+    }
+
+    .content__item-container {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: start; 
+        border: 1px solid red;
+    }
+
+     .content p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+
+    .content button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff; 
+      border-radius: 20px; 
+      font-size: 1.2em;
+      cursor: pointer;
+      display: flex; 
+      align-items: center;
+    }
+
+    .content button::before {
+      content: '\2190'; 
+      margin-right: 5px; 
+    }
+
+    .content button:hover {
+      background-color: #0056b3;
+    }
+    .content__title {
+      font-size: 3em;
+      margin-bottom: .5em;
+       white-space: nowrap;
+       text-align: left;
+    }
+    .content__text {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+        text-align: left;
+      }
+     .content__item {
+        flex: 0 0 calc(40% - 20px);
+        margin-right: 20px;
+      }
+
+    .content__image {
+      flex: 0 0 60%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    } 
+
+    .content__image img {
+      width: 100%;
+      height: auto;
+      border: 1px solid green;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 100%;
+      }
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .content__image img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+      }
+
+        .content__title {
+        font-size: 3vw;
+        text-align: center;
+      }
+
+      .content__text {
+        font-size: 1em;
+        margin-bottom: 2em;
+        text-align: center;
+      }
+
+       .content__item {
+        margin-bottom: 2em;
+      }
+
+      .content__button {
+        margin-top: 1em;
+        padding: 8px 12px;
+        font-size: 1em;
+      }
+
+      .content__image {
+        order: -1;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 1em;
+      }
+      
+
+
+    }
+
+    
