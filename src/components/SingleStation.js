@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StationInfo from './StationInfo';
 import MapView from './MapView';
-import TopStations from './TopStations';
+import TopStations from './TopStations.js';
 import Filter from './Filter';
 import { getStationDetailsByName, getStationDetailsWithDateFilter } from '../api/bikeStationsAPI';
 
