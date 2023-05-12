@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StationInfo from './StationInfo';
+import MapView from './MapView';
+import TopStations from './TopStations';
 import Filter from './Filter';
 import { getStationDetailsByName, getStationDetailsWithDateFilter } from '../api/bikeStationsAPI';
 
@@ -34,6 +36,8 @@ const SingleStation = () => {
     stationAddress,
     departureStationAggregate,
     returnStationAggregate,
+    topFiveDepartureStations,
+    topFiveReturnStations,
   } = stationDetails || {};
 
   return (
@@ -47,6 +51,11 @@ const SingleStation = () => {
             stationAddress={stationAddress}
             departureStationAggregate={departureStationAggregate}
             returnStationAggregate={returnStationAggregate}
+          />
+          <MapView address={stationAddress} />
+          <TopStations
+            topDepartureStations={topFiveDepartureStations}
+            topReturnStations={topFiveReturnStations}
           />
         </React.Fragment>
       )}
