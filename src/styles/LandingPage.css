@@ -21,15 +21,17 @@
 
     .container {
         padding: 0 20px; 
-        border: 1px solid yellow;
+        /* border: 1px solid yellow; */
         width: 100%;
     }
 
     .content__item-container {
         display: flex; 
+        flex-direction: row;
         justify-content: space-between; 
-        align-items: start; 
-        border: 1px solid red;
+        align-items: center;
+        margin-top: 8em;
+        /* border: 1px solid red; */
     }
 
      .content p {
@@ -48,8 +50,9 @@
       align-items: center;
     }
 
+
     .content button::before {
-      content: '\2190'; 
+      content: '\2192'; 
       margin-right: 5px; 
     }
 
@@ -57,33 +60,40 @@
       background-color: #0056b3;
     }
     .content__title {
-      font-size: 3em;
+      font-size: 3.5vw;
       margin-bottom: .5em;
        white-space: nowrap;
        text-align: left;
     }
     .content__text {
-        font-size: 1.2em;
-        margin-bottom: 1em;
+        font-size: 1.2vw;
+        padding-bottom: 3em;
         text-align: left;
+         max-width: 500px;
       }
      .content__item {
-        flex: 0 0 calc(40% - 20px);
-        margin-right: 20px;
+      /* border: 1px solid pink; */
+      margin-right: 20px;
       }
 
     .content__image {
-      flex: 0 0 60%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+      width:60%;
+      min-width: 550px;
     } 
 
     .content__image img {
       width: 100%;
-      height: auto;
-      border: 1px solid green;
+      max-width:800px;
+      height: 100%;
+      /* border: 1px solid green; */
     }
+    @media screen and (max-width: 850px) {
+      .content__image {
+        min-width: 450px;
+      }
+
+    }
+
 
     @media screen and (max-width: 768px) {
       .container {
@@ -93,9 +103,13 @@
         flex-direction: column;
         align-items: center;
       }
+      .content__item-container {
+        /* border: 1px solid #0056b3; */
+        flex-direction: column;
+      }
       .content__image img {
         width: 100%;
-        height: auto;
+        height: 100%;
         margin-bottom: 1em;
       }
 
@@ -114,17 +128,12 @@
         margin-bottom: 2em;
       }
 
-      .content__button {
-        margin-top: 1em;
-        padding: 8px 12px;
-        font-size: 1em;
-      }
-
       .content__image {
         order: -1;
-        width: 100%;
-        padding: 0;
-        margin-bottom: 1em;
+        width: 90%;
+        margin-bottom: 5em;
+        min-width: 100px;
+         max-width: 600px;  
       }
       
 

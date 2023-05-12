@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
-import './styles/App.css';
-import BikeTrips from './components/BikeTrips.js';
-import SingleStation from './components/SingleStation.js';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './styles/App.css';import LandingPage from './pages/LandingPage';
+import BikeTrips from './pages/TripHub';
+import StationHub from './pages/StationHub';
+import NotFound from './pages/NotFound';
 
 function App() {
-  const [showBikeTrips, setShowBikeTrips] = useState(true);
-
-  const handleToggleView = () => {
-    setShowBikeTrips(!showBikeTrips);
-  };
-
   return (
-    <div className="App">
-      <h1>Test page</h1>
-      <button onClick={handleToggleView}>Toggle View</button>
-      {showBikeTrips ? (
-        <BikeTrips />
-      ) : (
-        <SingleStation stationName="Example Station" />
-      )}
-    </div>
+    <>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/bike-trips" element={<BikeTrips />} />
+        <Route path="/station-hub" element={<StationHub />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+     </Router>
+      </>
   );
 }
 
