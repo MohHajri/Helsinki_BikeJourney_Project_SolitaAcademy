@@ -46,10 +46,29 @@ export const getStationDetailsWithDateFilter = async (stationName, startDate, en
   }
 };
 
+export const getCoordinatesForAddress = async (address) => {
+  try {
+    const response = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=YOUR_API_KEY`
+    );
+    const data = await response.json();
+    if (data.results && data.results.length > 0) {
+      const { lat, lng } = data.results[0].geometry.location;
+      return [lat, lng];
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error('Error getting coordinates:', error);
+    return null;
+  }
+};
+
 const bikeStationsAPI = {
   getAllTrips,
   getStationDetailsByName,
   getStationDetailsWithDateFilter,
+  getCoordinatesForAddress,
 };
 
 export default bikeStationsAPI;

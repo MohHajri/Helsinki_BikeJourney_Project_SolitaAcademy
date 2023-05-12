@@ -1,0 +1,16 @@
+HEADER//
+CycleSafari
+
+Explore Helsinki's Bike Adventures
+
+
+
+TEXT//
+Discover popular bike routes and stations in the 
+city with our curated trips, 
+or create your own adventure using our feature. 
+Get ready to explore Helsinki's bike culture in a whole new way.
+
+
+FONT //
+Source Sans Pro
