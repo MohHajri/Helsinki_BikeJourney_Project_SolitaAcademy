@@ -5,13 +5,15 @@ import bike_vector from '../assets/bike_vector.png';
 
 function LandingPage() {
   return (
+    <>
+       <Navbar />
+   
     <div className="container">
-      <Navbar />
       <div className="content">
         <div className="content__item-container">
           <div className="content__item">
             <h1 className="content__title">
-              Explore Helsinki's Bike Adventures
+              Explore Helsinki's <br></br> Bike Adventures
             </h1>
             <p className="content__text">
               Discover popular bike routes and stations in the city with our curated trips,
@@ -25,7 +27,8 @@ function LandingPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

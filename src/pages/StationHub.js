@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import StationInfo from '../components/StationInfo';
-import MapView from '../components/MapView';
+// import MapView from '../components/MapView';
 import TopStations from '../components/TopStations';
 import Filter from '../components/Filter';
 import { getStationDetailsByName, getStationDetailsWithDateFilter } from '../api/bikeStationsAPI';
+import '../styles/StationHub.css';
 
 const StationHub = () => {
   const [stationDetails, setStationDetails] = useState(null);
@@ -41,24 +42,28 @@ const StationHub = () => {
   } = stationDetails || {};
 
   return (
-    <div>
-      <Filter setSelectedStationName={setSelectedStationName} setDateFilter={setDateFilter} />
-      {loading && <div>Loading...</div>}
-      {stationDetails && (
-        <React.Fragment>
-          <StationInfo
-            stationName={stationName}
-            stationAddress={stationAddress}
-            departureStationAggregate={departureStationAggregate}
-            returnStationAggregate={returnStationAggregate}
-          />
-          <MapView address={stationAddress} />
-          <TopStations
-            topDepartureStations={topFiveDepartureStations}
-            topReturnStations={topFiveReturnStations}
-          />
-        </React.Fragment>
-      )}
+   <div className="container">
+      <div className="left-section">
+        <Filter setSelectedStationName={setSelectedStationName} setDateFilter={setDateFilter} />
+      </div>
+      <div>
+        {loading && <div>Loading...</div>}
+        {!stationDetails && <div className="center-text">Please search for a station to see details</div>}
+        {stationDetails && (
+          <React.Fragment>
+            <StationInfo
+              stationName={stationName}
+              stationAddress={stationAddress}
+              departureStationAggregate={departureStationAggregate}
+              returnStationAggregate={returnStationAggregate}
+            />
+            <TopStations
+              topDepartureStations={topFiveDepartureStations}
+              topReturnStations={topFiveReturnStations}
+            />
+          </React.Fragment>
+        )}
+      </div>
     </div>
   );
 };
