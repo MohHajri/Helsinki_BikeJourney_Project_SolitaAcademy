@@ -1,20 +1,20 @@
-
 import React from 'react';
+import '../styles/TopStations.css';
 
 const TopStations = ({ topDepartureStations, topReturnStations }) => {
   return (
-    <div>
-      <h2>Top Departure Stations</h2>
-      <ol>
+    <div className="top-stations-container">
+      <h2 className="top-stations-heading">Top Departure Stations</h2>
+      <ol className="top-stations-list">
         {topDepartureStations.map((station, index) => (
-          <li key={index}>{station}</li>
+          <li key={index} className="top-stations-item">{station}</li>
         ))}
       </ol>
 
-      <h2>Top Return Stations</h2>
-      <ol>
+      <h2 className="top-stations-heading">Top Return Stations</h2>
+      <ol className="top-stations-list">
         {topReturnStations.map((station, index) => (
-          <li key={index}>{station}</li>
+          <li key={index} className="top-stations-item">{station}</li>
         ))}
       </ol>
     </div>

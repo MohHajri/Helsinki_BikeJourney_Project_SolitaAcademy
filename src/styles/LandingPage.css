@@ -88,8 +88,6 @@
       }
 
     .content__image {
-      /* width:60%; */
-      /* width: fit-content; */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -99,7 +97,7 @@
 
     .content__image img {
 
-      width: 80%;
+      width: 90%;
       /* max-width:800px; */
       height: auto;
       /* height: 100%; */

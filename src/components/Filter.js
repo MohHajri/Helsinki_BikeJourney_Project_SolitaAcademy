@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import '../styles/Filter.css';
 
@@ -16,33 +15,36 @@ const Filter = ({ setSelectedStationName, setDateFilter }) => {
   };
 
   return (
-     <form onSubmit={handleSubmit} className="filter-form">
-      <h2 className="filter-header">Filter</h2>
-      <label htmlFor="stationName">Station Name:</label>
-      <input
-        id="stationName"
-        type="text"
-        value={stationName}
-        onChange={(e) => setStationName(e.target.value)}
-        className="filter-input"
-      />
-      <label htmlFor="startDate">Start Date:</label>
-      <input
-        id="startDate"
-        type="date"
-        value={startDate}
-        onChange={(e) => setStartDate(e.target.value)}
-        className="filter-date-input"
-      />
-      <label htmlFor="endDate">End Date:</label>
-      <input
-        id="endDate"
-        type="date"
-        value={endDate}
-        onChange={(e) => setEndDate(e.target.value)}
-        className="filter-date-input"
-      />
-      <button type="submit" className="filter-button">Filter</button>
+    <form onSubmit={handleSubmit} className="filter-form">
+      <div className="search-container">
+        <input
+          id="stationName"
+          type="text"
+          value={stationName}
+          onChange={(e) => setStationName(e.target.value)}
+          className="filter-input"
+          placeholder="Search for a station..."
+        />
+        <button type="submit" className="search-button">
+         Search
+        </button>
+      </div>
+      <div className="date-filter">
+        <input
+          id="startDate"
+          type="date"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+          className="filter-date-input"
+        />
+        <input
+          id="endDate"
+          type="date"
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
+          className="filter-date-input"
+        />
+      </div>
     </form>
   );
 };

@@ -1,5 +1,5 @@
-
 import React from 'react';
+import '../styles/StationInfo.css';
 
 const StationInfo = ({
   stationName,
@@ -8,26 +8,35 @@ const StationInfo = ({
   returnStationAggregate,
 }) => {
   return (
-    <div>
-      <h1>Station Name: {stationName}</h1>
-      <p>Station Address: {stationAddress}</p>
-      <p>
-        Total journeys starting from the station: {departureStationAggregate.noOfStartingTrips}
-      </p>
-      <p>
-        Total journeys ending at the station: {returnStationAggregate.noOfEndingTrips}
-      </p>
-      <p>
-        Average distance of a journey starting from the station:{' '}
-         {departureStationAggregate.avgDistanceOfStartingTrips ? departureStationAggregate.avgDistanceOfStartingTrips.toFixed(2) : '-'} km
-      </p>
-      <p>
-        Average distance of a journey ending at the station:{' '}
-        {returnStationAggregate.avgDistanceOfEndingTrips ? returnStationAggregate.avgDistanceOfEndingTrips.toFixed(2) : '-'} km
-      </p>
-    </div>
+    <div className="station-info-container">
+      <div className="station-info-header">
+        <h1 className="station-info-heading">{stationName}</h1>
+        <p className="station-info-address">{stationAddress}</p>
+      </div>
+      <div className="station-info-details">
+        <div className="station-info-item">
+          <span className="station-info-label">Total Departures</span>
+          <span className="station-info-value">{departureStationAggregate.noOfStartingTrips}</span>
+        </div>
+        <div className="station-info-item">
+          <span className="station-info-label">Total Arrivals</span>
+          <span className="station-info-value">{returnStationAggregate.noOfEndingTrips}</span>
+        </div>
+        <div className="station-info-item">
+          <span className="station-info-label">Avg. Departure Distance</span>
+          <span className="station-info-value">
+            {departureStationAggregate.avgDistanceOfStartingTrips ? departureStationAggregate.avgDistanceOfStartingTrips.toFixed(2) : '-'}
+          </span>
+        </div>
+        <div className="station-info-item">
+          <span className="station-info-label">Avg. Arrival Distance</span>
+          <span className="station-info-value">
+            {returnStationAggregate.avgDistanceOfEndingTrips ? returnStationAggregate.avgDistanceOfEndingTrips.toFixed(2) : '-'}
+          </span>
+        </div>
+      </div>
+      </div>
   );
 };
-
 
 export default StationInfo;

@@ -5,6 +5,7 @@ import TopStations from '../components/TopStations';
 import Filter from '../components/Filter';
 import { getStationDetailsByName, getStationDetailsWithDateFilter } from '../api/bikeStationsAPI';
 import '../styles/StationHub.css';
+import Navbar from '../components/Navbar';
 
 const StationHub = () => {
   const [stationDetails, setStationDetails] = useState(null);
@@ -42,15 +43,17 @@ const StationHub = () => {
   } = stationDetails || {};
 
   return (
-   <div className="container">
+    <>
+        <Navbar></Navbar>
+    <div className="StationHub__container">
       <div className="left-section">
         <Filter setSelectedStationName={setSelectedStationName} setDateFilter={setDateFilter} />
       </div>
-      <div>
-        {loading && <div>Loading...</div>}
-        {!stationDetails && <div className="center-text">Please search for a station to see details</div>}
+      <div className="right-section">
+        {loading && <div className="loading-text">Loading...</div>}
+        {!selectedStationName && <div className="center-text">Please search for a station to see details</div>}
         {stationDetails && (
-          <React.Fragment>
+          <>
             <StationInfo
               stationName={stationName}
               stationAddress={stationAddress}
@@ -61,10 +64,11 @@ const StationHub = () => {
               topDepartureStations={topFiveDepartureStations}
               topReturnStations={topFiveReturnStations}
             />
-          </React.Fragment>
+          </>
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
