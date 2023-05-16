@@ -68,10 +68,9 @@ export const getCoordinatesForAddress = async (address) => {
 
 export const saveBikeTrip = async (bikeTrip) => {
   try {
-    const formattedDepartureTime = moment.utc(bikeTrip.departureTime).format('YYYY-MM-DDTHH:mm:ss.SSS') + '+00:00';
-    const formattedReturnTime = moment.utc(bikeTrip.returnTime).format('YYYY-MM-DDTHH:mm:ss.SSS') + '+00:00';
+     const formattedDepartureTime = moment.utc(bikeTrip.departureTime).format('YYYY-MM-DD HH:mm:ss');
+     const formattedReturnTime = moment.utc(bikeTrip.returnTime).format('YYYY-MM-DD HH:mm:ss');
 
-  
     console.log('Formatted departureTime:', formattedDepartureTime);
 
     const formattedBikeTrip = {
@@ -80,13 +79,24 @@ export const saveBikeTrip = async (bikeTrip) => {
       returnTime: formattedReturnTime
     };
 
-    const response = await api.post('/savebiketrip', formattedBikeTrip);
+    // Create a new URLSearchParams instance
+    const params = new URLSearchParams();
+    // Add each property of formattedBikeTrip as a new form parameter
+    Object.keys(formattedBikeTrip).forEach(key => params.append(key, formattedBikeTrip[key]));
+
+    // Use the params instance in your POST request and set the Content-Type header to application/x-www-form-urlencoded
+    const response = await api.post('/savebiketrip', params, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
     return response.data;
   } catch (error) {
     console.error('Error saving bike trip:', error);
     return null;
   }
 };
+
 
 const bikeStationsAPI = {
   getAllTrips,
