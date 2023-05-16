@@ -1,38 +1,53 @@
 .bike-trips-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .bike-trips-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-.bike-trip {
+.bike-trip-card {
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 4px #ccc;
-  margin-bottom: 20px;
-  width: 30%;
-  padding: 10px;
-  display: flex;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bike-trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .bike-trip-details {
-  flex-grow: 1;
-  margin-right: 10px;
+  text-align: center;
 }
 
 .bike-trip-station {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.info-label {
   font-weight: bold;
+  color: #666;
 }
 
 .bike-trip-distance,
 .bike-trip-duration {
-  margin-top: 5px;
+  font-size: 16px;
+  color: #333;
+  margin: 8px 0;
 }

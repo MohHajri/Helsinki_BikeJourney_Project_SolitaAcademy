@@ -1,4 +1,6 @@
 import axios from 'axios';
+import moment from 'moment';
+
 
 const api = axios.create({
   baseURL: 'http://localhost:8080',
@@ -64,11 +66,34 @@ export const getCoordinatesForAddress = async (address) => {
   }
 };
 
+export const saveBikeTrip = async (bikeTrip) => {
+  try {
+    const formattedDepartureTime = moment.utc(bikeTrip.departureTime).format('YYYY-MM-DDTHH:mm:ss.SSS') + '+00:00';
+    const formattedReturnTime = moment.utc(bikeTrip.returnTime).format('YYYY-MM-DDTHH:mm:ss.SSS') + '+00:00';
+
+  
+    console.log('Formatted departureTime:', formattedDepartureTime);
+
+    const formattedBikeTrip = {
+      ...bikeTrip,
+      departureTime: formattedDepartureTime,
+      returnTime: formattedReturnTime
+    };
+
+    const response = await api.post('/savebiketrip', formattedBikeTrip);
+    return response.data;
+  } catch (error) {
+    console.error('Error saving bike trip:', error);
+    return null;
+  }
+};
+
 const bikeStationsAPI = {
   getAllTrips,
   getStationDetailsByName,
   getStationDetailsWithDateFilter,
   getCoordinatesForAddress,
+  saveBikeTrip,
 };
 
 export default bikeStationsAPI;
