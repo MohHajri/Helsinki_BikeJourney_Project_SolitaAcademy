@@ -2,10 +2,10 @@ import React from 'react';
 import BikeTripForm from '../components/BikeTripForm';
 
 const CreateBikeTripPage = () => {
-  const handleFormSubmit = (savedBikeTrip) => {
-    // TODO: Handle the saved bike trip data as needed
+    const handleFormSubmit = (savedBikeTrip) => {
+
+        //TEST  
     console.log('Received saved bike trip:', savedBikeTrip);
-    // Perform any necessary actions with the saved data
   };
 
   return (

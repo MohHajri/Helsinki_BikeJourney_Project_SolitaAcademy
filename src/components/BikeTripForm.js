@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import bikeStationsAPI from '../api/bikeStationsAPI';
 import { validateBikeTripForm } from '../utils/validateBikeTripForm';
+import SavedBikeTrip from './SavedBikeTrip';
 
 const BikeTripForm = ({ onSubmit }) =>
 {
@@ -13,6 +14,7 @@ const BikeTripForm = ({ onSubmit }) =>
   const [coveredDistanceInMeter, setCoveredDistanceInMeter] = useState('');
   const [durationInSec, setDurationInSec] = useState('');
   const [errors, setErrors] = useState({});
+    
    //test
   const [savedTrip, setSavedTrip] = useState(null);
 
@@ -39,38 +41,32 @@ const BikeTripForm = ({ onSubmit }) =>
       
 
    try {
-      // Send a POST request to save the bike trip
        const savedBikeTrip = await bikeStationsAPI.saveBikeTrip(formData);
-    //    console.log('departureTime:', departureTime);
-    //    console.log('bikeTrip:', bikeTrip);
 
 
-
-      // Check if the bike trip was successfully saved
        if (savedBikeTrip) {
            setSavedTrip(savedBikeTrip);
-        // Call the onSubmit function passed from the parent component
-        onSubmit(savedBikeTrip);
-        // Reset the form fields
-        setDepartureTime('');
-        setReturnTime('');
-        setDepartureStationId('');
-        setDepartureStationName('');
-        setReturnStationId('');
-        setReturnStationName('');
-        setCoveredDistanceInMeter('');
-        setDurationInSec('');
+           onSubmit(savedBikeTrip);
+            setDepartureTime('');
+            setReturnTime('');
+            setDepartureStationId('');
+            setDepartureStationName('');
+            setReturnStationId('');
+            setReturnStationName('');
+            setCoveredDistanceInMeter('');
+            setDurationInSec('');
       } else {
-        // Handle save error
+       
         setErrors('Error saving bike trip');
       }
     } catch (error) {
-      // Handle save error
+      
       setErrors('Error saving bike trip');
     }
   };
 
-  return (
+    return (
+      <>
     <form onSubmit={handleSubmit}>
       <label>
         Departure Time:
@@ -105,9 +101,12 @@ const BikeTripForm = ({ onSubmit }) =>
         <input type="text" value={durationInSec} onChange={(e) => setDurationInSec(e.target.value)} />
         </label>
           {errors && <p>{errors.submitError}</p>}
-           {savedTrip && <p>Bike trip saved successfully! Trip ID: {savedTrip.id}</p>}
+           {/* {savedTrip && <p>Bike trip saved successfully! Trip ID: {savedTrip.id}</p>} */}
       <button type="submit">Save Bike Trip</button>
-    </form>
+      </form>
+            <SavedBikeTrip bikeTrip={savedTrip} />
+        </>
+      
     );
 };
 

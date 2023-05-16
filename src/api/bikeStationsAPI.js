@@ -79,12 +79,10 @@ export const saveBikeTrip = async (bikeTrip) => {
       returnTime: formattedReturnTime
     };
 
-    // Create a new URLSearchParams instance
     const params = new URLSearchParams();
-    // Add each property of formattedBikeTrip as a new form parameter
+    
     Object.keys(formattedBikeTrip).forEach(key => params.append(key, formattedBikeTrip[key]));
 
-    // Use the params instance in your POST request and set the Content-Type header to application/x-www-form-urlencoded
     const response = await api.post('/savebiketrip', params, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
