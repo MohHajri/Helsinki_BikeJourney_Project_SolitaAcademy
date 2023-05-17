@@ -10,7 +10,7 @@ const CreateBikeTripPage = () => {
 
   return (
     <div>
-      <h1>Create Bike Trip</h1>
+      {/* <h1>Create Bike Trip</h1> */}
       <BikeTripForm onSubmit={handleFormSubmit} />
     </div>
   );
