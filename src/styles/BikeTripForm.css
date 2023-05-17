@@ -1,5 +1,12 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.5;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
 
 .bike-body {
@@ -95,6 +102,14 @@ button[type="submit"]:focus {
 .content-text p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
 }
 
 @media screen and (max-width: 1300px) {
