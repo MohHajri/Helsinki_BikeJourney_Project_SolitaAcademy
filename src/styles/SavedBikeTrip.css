@@ -1,41 +1,51 @@
-/* SavedBikeTrip.css */
+
+:root {
+ --padding: 1rem;
+}
+body {
+  font-family: Source Sans Pro;
+}
 
 .savedBikeTrip {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 8px;
+  background: linear-gradient(to right, rgba(241, 39, 230, 0.5), rgba(245, 175, 25, 0.5));
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  display: flex; 
+  flex-direction: column; 
+  margin: var(--padding);
+  padding: var(--padding);
+  transition: all 0.3s ease-in-out; 
 }
 
 .title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+  color: #fff;
+  font-size: 1.5rem;
+   font-weight: bold;
+  margin-bottom: var(--padding); 
+  text-align: center;
 }
 
 .tripInfo {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tripInfo th,
-.tripInfo td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.tripInfo th {
-  background-color: #f8f8f8;
-  font-weight: bold;
-  color: #555;
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
 .label {
-  font-weight: bold;
-  color: #777;
+  color: #fff;
+  font-size: 1rem;
+  padding: var(--padding);
+}
+
+.value {
+  color: #333;
+  font-size: 1rem;
+  padding: var(--padding);
+}
+
+.tripInfoItem {
+  margin-right: var(--padding); /* Use a margin for the table cells */
+}
+
+.savedBikeTrip:hover {
+ transform: translateY(-10px); /* Use a lift effect on hover */
 }

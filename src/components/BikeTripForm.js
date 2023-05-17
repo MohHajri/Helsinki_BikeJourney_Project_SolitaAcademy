@@ -150,6 +150,7 @@ const BikeTripForm = ({ onSubmit }) => {
   const [durationInSec, setDurationInSec] = useState('');
   const [errors, setErrors] = useState({});
   const [savedTrip, setSavedTrip] = useState(null);
+  const [showSavedTrip, setShowSavedTrip] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -186,6 +187,7 @@ const BikeTripForm = ({ onSubmit }) => {
         setCoveredDistanceInMeter('');
         setDurationInSec('');
         setErrors({});
+        setShowSavedTrip(true);
       } else {
         setErrors('Error saving bike trip');
       }
@@ -295,21 +297,29 @@ const BikeTripForm = ({ onSubmit }) => {
         </div>
       </form>
     </div>
-    <div className="content-container">
-      <div className="content-header">
-        <h2>Ready?</h2>
-      </div>
-      <div className="content-text">
-        <p>Fill in the form below and hit "Save Bike Trip"
-          to embark on an unforgettable journey!
-          Make sure to fill in all the required information and meet the thrilling challenge of form validation.
-          Once completed, your bike trip will be revealed right here in all its glory. Get ready for an adrenaline-filled experience!
-        </p>
-      </div>
-    </div>
-    <SavedBikeTrip bikeTrip={savedTrip} />
+    
+    {showSavedTrip ? (
+      <SavedBikeTrip bikeTrip={savedTrip} />
+    ) : (
+      <>
+        <div className="content-container">
+          <div className="content-header">
+            <h2>Ready?</h2>
+          </div>
+          <div className="content-text">
+            <p>Fill in the form below and hit "Save Bike Trip"
+              to embark on an unforgettable journey!
+              Make sure to fill in all the required information and meet the thrilling challenge of form validation.
+              Once completed, your bike trip will be revealed right here in all its glory. Get ready for an adrenaline-filled experience!
+            </p>
+          </div>
+        </div>
+        {/* <SavedBikeTrip bikeTrip={savedTrip} /> */}
+      </>
+    )}
   </div>
 );
+
 
 };
 
