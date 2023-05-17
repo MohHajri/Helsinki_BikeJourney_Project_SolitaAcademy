@@ -1,21 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import '../styles/LandingPage.css';
 import bike_vector from '../assets/bike_vector.png';
-import CreateBikeTripPage from './CreateBikeTripPage';
 
 function LandingPage() {
 
-  const handleCreateTrip = () => {
-    // Render the CreateBikeTripPage component
-    return <CreateBikeTripPage />;
-  };
-  
   return (
-    <>
-       <Navbar />
-   
     <div className="container">
       <div className="content">
         <div className="content__item-container">
@@ -38,7 +29,6 @@ function LandingPage() {
         </div>
       </div>
       </div>
-    </>
   );
 }
 

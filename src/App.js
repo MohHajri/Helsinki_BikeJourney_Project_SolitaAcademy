@@ -5,11 +5,13 @@ import BikeTrips from './pages/TripHub';
 import StationHub from './pages/StationHub';
 import CreateBikeTripPage from './pages/CreateBikeTripPage';
 import NotFound from './pages/NotFound';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <>
-    <Router>
+      <Router>
+         <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/bike-trips" element={<BikeTrips />} />

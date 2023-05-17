@@ -5,7 +5,6 @@ import TopStations from '../components/TopStations';
 import Filter from '../components/Filter';
 import { getStationDetailsByName, getStationDetailsWithDateFilter } from '../api/bikeStationsAPI';
 import '../styles/StationHub.css';
-import Navbar from '../components/Navbar';
 
 const StationHub = () => {
   const [stationDetails, setStationDetails] = useState(null);
@@ -44,7 +43,7 @@ const StationHub = () => {
 
   return (
     <>
-        <Navbar></Navbar>
+        {/* <Navbar></Navbar> */}
     <div className="StationHub__container">
       <div className="left-section">
         <Filter setSelectedStationName={setSelectedStationName} setDateFilter={setDateFilter} />

@@ -1,8 +1,7 @@
-// src/BikeTrips.js
+
 import React, { useState, useEffect } from 'react';
 import bikeStationsAPI from '../api/bikeStationsAPI';
 import '../styles/TripHub.css';
-import Navbar from '../components/Navbar';
 
 function TripHub() {
   const [trips, setTrips] = useState([]);
@@ -27,8 +26,6 @@ function TripHub() {
   }, []);
 
   return (
-    <>
-      <Navbar />
       <div className="bike-trips-container">
         <h1 className="page-title">List of Bike Trips</h1>
         {loading ? (
@@ -56,7 +53,6 @@ function TripHub() {
           </div>
         )}
       </div>
-    </>
   );
 }
 
