@@ -14,7 +14,7 @@ export const getAllTrips = async (params) => {
     return response.data;
   } catch (error) {
     console.error('Error getting all trips:', error);
-    return null;
+    return error;
   }
 };
 
@@ -28,7 +28,7 @@ export const getStationDetailsByName = async (stationName) => {
     return response.data;
   } catch (error) {
     console.error('Error getting station details by name:', error);
-    return null;
+    return error;
   }
 };
 
@@ -44,7 +44,7 @@ export const getStationDetailsWithDateFilter = async (stationName, startDate, en
     return response.data;
   } catch (error) {
     console.error('Error getting station details with date filter:', error);
-    return null;
+    return error;
   }
 };
 
@@ -62,7 +62,7 @@ export const getCoordinatesForAddress = async (address) => {
     }
   } catch (error) {
     console.error('Error getting coordinates:', error);
-    return null;
+    return error;
   }
 };
 
@@ -91,7 +91,7 @@ export const saveBikeTrip = async (bikeTrip) => {
     return response.data;
   } catch (error) {
     console.error('Error saving bike trip:', error);
-    return null;
+    return error;
   }
 };
 

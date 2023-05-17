@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #eb4d55;
+  --secondary-color: #e0e0e0;
+  --success-color: #7ac07e;
+  --error-color: red;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,14 +45,14 @@
   line-height: 1.2;
   margin-block-start: 0.83em;
   align-self: start;
-  padding: 0; 
+  padding: 0;
   text-align: center;
 }
 
 .bike-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: .5rem;
+  row-gap: 0.5rem;
   column-gap: 2.5rem;
   width: 100%;
   padding: 2.5rem 0;
@@ -67,6 +74,7 @@ input {
   line-height: 1.5;
   border: 1px solid #d9d9d9;
   border-radius: 0;
+  padding: 0.5rem;
 }
 
 .button-container {
@@ -75,17 +83,20 @@ input {
 
 button[type="submit"] {
   height: 3rem;
-  background-color: #eb4d55;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   padding: 0 20px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button[type="submit"]:hover {
-  background-color: #e0e0e0;
+  background-color: var(--secondary-color);
 }
 
 button[type="submit"]:focus {
@@ -93,8 +104,44 @@ button[type="submit"]:focus {
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
 }
 
+.button-loading {
+  position: relative;
+}
+
+.button-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: button-loading 0.8s linear infinite;
+}
+
+@keyframes button-loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.button-success {
+  background-color: var(--success-color);
+  animation: none;
+}
+
+.button-success::after {
+  display: none;
+}
+
 .content-text {
-  text-align: center; 
+  text-align: center;
   margin-bottom: 2rem;
   white-space: normal;
 }
@@ -105,22 +152,21 @@ button[type="submit"]:focus {
 }
 
 .error {
-  border: 1px solid red;
+  border: 1px solid var(--error-color);
 }
 
 .error-message {
-  color: red;
+  color: var(--error-color);
 }
 
 @media screen and (max-width: 1300px) {
-  
-  .form-container{
+  .form-container {
     width: 60%;
   }
 }
 
 @media (max-width: 950px) {
-    .bike-body {
+  .bike-body {
     flex-direction: column;
     padding: 1rem;
     height: auto;
@@ -133,14 +179,14 @@ button[type="submit"]:focus {
   }
 
   .bike-form {
-    grid-template-columns: 1fr; 
-    gap: .5rem;
-    padding: 0; 
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0;
   }
 
   .form-header,
   .content-header {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
   }
 
   input {
