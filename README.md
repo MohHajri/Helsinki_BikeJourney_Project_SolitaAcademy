@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Bike Journeys - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend repository for the **Bike Journeys** application.
 
-## Available Scripts
+## Setup and Run
 
-In the project directory, you can run:
+Follow the instructions below to set up and run the frontend project on your machine.
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js and npm installed on your machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Clone the repository to your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+2. Navigate to the project directory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. In the project directory, create a `.env` file.
 
-### `npm run eject`
+2. Add the following environment variable to the `.env` file and customize it as needed:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    `REACT_APP_API_BASE_URL=http://localhost:8080`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Replace `http://localhost:8080` with the base URL of your backend API.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br>
 
-## Learn More
+### Running the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Start the development server.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    `npm start`
 
-### Code Splitting
+2. Open your web browser and visit `http://localhost:3000` to access the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    bike-journeys/
+    |- backend/
+    |- src/
+    |- main/
+    |- java/
+    |- resources/
+    |- test/
+    |- pom.xml
+    |- README.md
+    |- frontend/
+    |- public/
+    |- src/
+    |- components/
+    |- pages/
+    |- api/
+    |- utils/
+    |- styles/
+    |- App.js
+    |- index.js
+    |- .env
+    |- README.md
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## API Requests
 
-### Deployment
+Append the endpoint with the root URL of the backend application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Refer to the Backend README for a detailed list of available API endpoints, request methods, parameters, and responses.
 
-### `npm run build` fails to minify
+## Entities
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Refer to the Backend README for information about the entities used in the project.
+
+## Features
+
+The **Bike Journeys** application provides the following features:
+
+- **Landing Page**: Provides an overview of the application and its features.
+- **Bike Trips**: Allows users to view, create, and manage bike trips.
+- **Station Hub**: Provides information about bike stations, including total departures, total arrivals, average departure distance, average arrival distance, and top departure and return stations.
+- **Create Bike Trip**: Allows users to create and save new bike trips through a form.
+- **404 Page**: Displays a "Not Found" page for any unknown routes.
+
+<br>
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **React Router**: Library for routing and navigation in a React application.
+- **Axios**: HTTP client for making API requests.
+- Leaflet: Library for interactive maps.
+- **CSS**: Styling and design of the application.
