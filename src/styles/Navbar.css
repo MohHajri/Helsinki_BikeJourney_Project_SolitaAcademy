@@ -1,14 +1,5 @@
-/**
-    * ----------------------------------------
-    *  LandingPage.css
-    * ----------------------------------------
-*/
-
-
 .navbar {
-  /* border: 1px solid green; */
   display: flex;
-  /* justify-content: center; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -18,7 +9,6 @@
 }
 
 .navbar__container {
-  /* border: 1px solid greenyellow; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,22 +22,115 @@
   font-weight: bold;
 }
 
-.navbar__menu {
-  /* border: 1px solid red; */
+.navbar__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.navbar__overlay.active {
   display: flex;
   align-items: center;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar__overlay-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.navbar__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar__links-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
-  margin: 0;
+  margin: 20px 0;
   padding: 0;
 }
 
-.navbar__menu li {
-  margin: 0 10px;
+.navbar__links-mobile li {
+  margin: 10px 0;
 }
 
-.navbar__menu li a {
-  color: #333;
+.navbar__links-mobile li a {
+  color: #fff;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
+}
+
+.navbar__links-desktop {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.navbar__links-desktop li {
+  margin: 0 10px;
+}
+
+.navbar__links-desktop li a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2;
+    width: 30px;
+    height: 25px;
+  }
+   .navbar__hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;  
+}
+
+}
+
+@media (min-width: 769px) {
+  .navbar__links-desktop {
+    display: flex;
+  }
+  .navbar__links-mobile, .navbar__hamburger {
+    display: none;
+  }
 }

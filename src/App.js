@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
-import './styles/App.css';import LandingPage from './pages/LandingPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './styles/App.css';
+import LandingPage from './pages/LandingPage';
 import BikeTrips from './pages/TripHub';
 import StationHub from './pages/StationHub';
 import CreateBikeTripPage from './pages/CreateBikeTripPage';
@@ -9,9 +10,8 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <>
-      <Router>
-         <Navbar />
+    <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/bike-trips" element={<BikeTrips />} />
@@ -19,8 +19,7 @@ function App() {
         <Route path="/create-bike-trip" element={<CreateBikeTripPage />} />
         <Route path="*" element={<NotFound />} /> 
       </Routes>
-     </Router>
-      </>
+    </Router>
   );
 }
 

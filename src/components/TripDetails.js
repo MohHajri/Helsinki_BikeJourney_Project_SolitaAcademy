@@ -1,20 +1,25 @@
 import React from 'react';
+import '../styles/TripHub.css';
 
 const TripDetails = ({ departureStation, returnStation, coveredDistance, duration }) => {
   return (
-    <div className="bike-trip-details">
-      <p className="bike-trip-station">
-        <span className="info-label">Departure Station:</span> {departureStation}
-      </p>
-      <p className="bike-trip-station">
-        <span className="info-label">Return Station:</span> {returnStation}
-      </p>
-      <p className="bike-trip-distance">
-        <span className="info-label">Distance Covered:</span> {Math.round(coveredDistance / 1000)} km
-      </p>
-      <p className="bike-trip-duration">
-        <span className="info-label">Duration:</span> {Math.round(duration / 60)} mins
-      </p>
+    <div className="trip-details">
+      <div className="station-info">
+        <p className="station-label">Departure Station</p>
+        <p className="station-name">{departureStation}</p>
+      </div>
+      <div className="station-info">
+        <p className="station-label">Return Station</p>
+        <p className="station-name">{returnStation}</p>
+      </div>
+      <div className="trip-info">
+        <p className="info-label">Distance Covered:</p>
+        <p className="info-value">{Math.round(coveredDistance / 1000)} km</p>
+      </div>
+      <div className="trip-info">
+        <p className="info-label">Duration:</p>
+        <p className="info-value">{Math.round(duration / 60)} mins</p>
+      </div>
     </div>
   );
 };

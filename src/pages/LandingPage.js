@@ -13,7 +13,6 @@ function LandingPage() {
   }, []);
 
   return (
-    // <div className="container">
      <div className={`container ${animate ? 'active' : ''}`}>
       <div className="content">
         <div className="content__item-container">

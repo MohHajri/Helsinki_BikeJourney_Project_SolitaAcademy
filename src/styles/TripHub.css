@@ -8,7 +8,7 @@
   font-size: 32px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 4rem;
 }
 
 .bike-trips-list {
@@ -18,36 +18,105 @@
 }
 
 .bike-trip-card {
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  min-width: 20rem;
+  height: 20rem;
   border-radius: 8px;
-  padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .bike-trip-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f27f85;
 }
 
-.bike-trip-details {
+.trip-image img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.trip-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  /* border: 1px solid red; */
+  padding: 1rem;
+}
+
+.station-info,
+.trip-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.station-info::after,
+.trip-info::after {
+  content: "";
+  border-top: 1px solid #ccc;
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.station-label,
+.info-label {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 4px;
   text-align: center;
 }
 
-.bike-trip-station {
+.station-name,
+.info-value {
   font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.info-label {
   font-weight: bold;
-  color: #666;
+  color: #333;
+  margin: 0;
+  text-align: center;
 }
 
-.bike-trip-distance,
-.bike-trip-duration {
-  font-size: 16px;
-  color: #333;
-  margin: 8px 0;
+.bike-trip-card:hover .station-label,
+.bike-trip-card:hover .info-label {
+  color: #fff; 
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 480px) {
+  .bike-trips-container {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 2rem;
+  }
+
+  .bike-trips-list {
+    grid-template-columns: 1fr;
+  }
+
+  .bike-trip-card {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .trip-details {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .trip-image img {
+    max-height: 80px;
+  }
 }
