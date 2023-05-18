@@ -1,12 +1,20 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/LandingPage.css';
 import bike_vector from '../assets/bike_vector.png';
 
 function LandingPage() {
 
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
   return (
-    <div className="container">
+    // <div className="container">
+     <div className={`container ${animate ? 'active' : ''}`}>
       <div className="content">
         <div className="content__item-container">
           <div className="content__item">

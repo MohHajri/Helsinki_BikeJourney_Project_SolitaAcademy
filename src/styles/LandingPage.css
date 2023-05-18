@@ -28,6 +28,9 @@ body {
 
 .container {
   padding: 0 20px;
+  /* ANIMATION */
+  overflow: hidden;
+
 }
 
 .content {
@@ -54,6 +57,11 @@ body {
   margin-bottom: 0.5em;
   white-space: nowrap;
   text-align: left;
+  /* ANIMATION */
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+
 }
 
 .content__text {
@@ -61,6 +69,42 @@ body {
   padding-bottom: 3em;
   text-align: left;
   max-width: 500px;
+  /* ANIMATION */
+  opacity: 0;
+  transform: translateX(-110%);
+  transition: opacity 0.5s ease-in-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+
+}
+
+
+/* ANIMATION */
+.container.active .content__title,
+.container.active .content__text,
+.container.active .content__image {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+   100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .content__item {
@@ -79,6 +123,17 @@ body {
   align-items: center;
   width: auto;
   white-space: nowrap;
+  /* ANIMATION */
+  opacity: 0;
+  transform: translateX(-110%);
+  transition: opacity 0.5s ease-in-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+
+}
+
+/* ANIMATION */
+.container.active .content__button {
+  opacity: 1;
+  transform: translateY(0%);
 }
 
 .content__button::before {
@@ -94,6 +149,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* ANIMATION */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+ /* ANIMATION */
+.container.active .content__image {
+  opacity: 1;
+  transform: none;
 }
 
 .content__image img {
@@ -101,6 +166,7 @@ body {
   height: auto;
   overflow: hidden;
 }
+
 
 @media screen and (max-width: 850px) {
   .content__image {
@@ -147,4 +213,15 @@ body {
     min-width: 100px;
     max-width: 600px;
   }
+
+  .content__image,
+  .content__title, 
+  .content__text, 
+  .content__button,
+  .content__image {
+    /* ANIMATION */
+   
+    transition: none;
+  }
+
 }
