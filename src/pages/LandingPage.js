@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Navbar from '../components/Navbar';
 import '../styles/LandingPage.css';
 import bike_vector from '../assets/bike_vector.png';
 
@@ -33,3 +32,4 @@ function LandingPage() {
 }
 
 export default LandingPage;
+

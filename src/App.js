@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import './styles/App.css';import LandingPage from './pages/LandingPage';
 import BikeTrips from './pages/TripHub';
 import StationHub from './pages/StationHub';
@@ -17,7 +17,7 @@ function App() {
         <Route path="/bike-trips" element={<BikeTrips />} />
         <Route path="/station-hub" element={<StationHub />} />
         <Route path="/create-bike-trip" element={<CreateBikeTripPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
      </Router>
       </>

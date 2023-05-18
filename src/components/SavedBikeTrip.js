@@ -1,12 +1,13 @@
+
 import React from 'react';
 import '../styles/SavedBikeTrip.css';
+import TripDetails from './TripDetails';
 
 const SavedBikeTrip = ({ bikeTrip }) => {
   if (!bikeTrip) {
     return null;
   }
 
-  // Convert the timestamps to a readable format
   const departureTime = new Date(bikeTrip.departureTime).toLocaleString();
   const returnTime = new Date(bikeTrip.returnTime).toLocaleString();
 
@@ -27,30 +28,12 @@ const SavedBikeTrip = ({ bikeTrip }) => {
             <th className="label">Return Time:</th>
             <td>{returnTime}</td>
           </tr>
-          <tr>
-            <th className="label">Departure Station ID:</th>
-            <td>{bikeTrip.departureStationId}</td>
-          </tr>
-          <tr>
-            <th className="label">Departure Station Name:</th>
-            <td>{bikeTrip.departureStationName}</td>
-          </tr>
-          <tr>
-            <th className="label">Return Station ID:</th>
-            <td>{bikeTrip.returnStationId}</td>
-          </tr>
-          <tr>
-            <th className="label">Return Station Name:</th>
-            <td>{bikeTrip.returnStationName}</td>
-          </tr>
-          <tr>
-            <th className="label">Covered Distance:</th>
-            <td>{bikeTrip.coveredDistanceInMeter} meters</td>
-          </tr>
-          <tr>
-            <th className="label">Duration:</th>
-            <td>{Math.round(bikeTrip.durationInSec / 60)} minutes</td>
-          </tr>
+          <TripDetails
+            departureStation={bikeTrip.departureStationName}
+            returnStation={bikeTrip.returnStationName}
+            coveredDistance={bikeTrip.coveredDistanceInMeter}
+            duration={bikeTrip.durationInSec}
+          />
         </tbody>
       </table>
     </div>
@@ -58,3 +41,4 @@ const SavedBikeTrip = ({ bikeTrip }) => {
 };
 
 export default SavedBikeTrip;
+

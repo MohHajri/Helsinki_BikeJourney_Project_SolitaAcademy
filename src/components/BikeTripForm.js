@@ -119,7 +119,7 @@ const BikeTripForm = ({ onSubmit }) => {
               error={errors[id] || ''}
             />
           ))}
-          {errors && <p className="error-message">{errors.submitError}</p>}
+          {Object.keys(errors).some((key) => errors[key]) && <p className="error-message">{errors.submitError}</p>}
           <div className="form-group button-container">
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (

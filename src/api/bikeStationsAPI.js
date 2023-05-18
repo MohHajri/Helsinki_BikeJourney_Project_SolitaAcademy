@@ -95,6 +95,20 @@ export const saveBikeTrip = async (bikeTrip) => {
   }
 };
 
+  export const getBikeTripById = async (id) => {
+    try {
+      const response = await api.get('/gettripbyid', {
+        params: {
+          id,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error getting bike trip by ID:', error);
+      return error;
+    }
+  };
+
 
 const bikeStationsAPI = {
   getAllTrips,
@@ -102,6 +116,7 @@ const bikeStationsAPI = {
   getStationDetailsWithDateFilter,
   getCoordinatesForAddress,
   saveBikeTrip,
+  getBikeTripById,
 };
 
 export default bikeStationsAPI;
