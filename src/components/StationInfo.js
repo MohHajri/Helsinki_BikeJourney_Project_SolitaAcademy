@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/StationInfo.css';
 
 const StationInfo = ({
   stationName,

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/TopStations.css';
 
 const TopStations = ({ topDepartureStations, topReturnStations }) => {
   return (
