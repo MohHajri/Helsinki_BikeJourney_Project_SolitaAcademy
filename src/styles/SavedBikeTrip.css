@@ -25,11 +25,6 @@ body {
   text-align: center;
 }
 
-.tripInfo {
-  display: flex; 
-  flex-wrap: wrap; 
-}
-
 .label {
   color: #fff;
   font-size: 1rem;
@@ -43,9 +38,9 @@ body {
 }
 
 .tripInfoItem {
-  margin-right: var(--padding); /* Use a margin for the table cells */
+  margin-right: var(--padding); 
 }
 
 .savedBikeTrip:hover {
- transform: translateY(-10px); /* Use a lift effect on hover */
+ transform: translateY(-10px); 
 }

@@ -14,28 +14,26 @@ const SavedBikeTrip = ({ bikeTrip }) => {
   return (
     <div className="savedBikeTrip">
       <h2 className="title">Saved Bike Trip</h2>
-      <table className="tripInfo">
-        <tbody>
-          <tr>
-            <th className="label">Trip ID:</th>
-            <td>{bikeTrip.id}</td>
-          </tr>
-          <tr>
-            <th className="label">Departure Time:</th>
-            <td>{departureTime}</td>
-          </tr>
-          <tr>
-            <th className="label">Return Time:</th>
-            <td>{returnTime}</td>
-          </tr>
+      <div className="tripInfo">
+           <div className="station-info">
+              <p className="station-label">Trip ID </p>
+              <p className="station-name">{bikeTrip.id}</p>
+            </div>
+            <div className="station-info">
+                <p className="station-label">Departure Time </p>
+                <p className="station-name">{departureTime}</p>
+            </div>
+            <div className="station-info">
+                <p className="station-label">Return Time </p>
+                <p className="station-name">{returnTime}</p>
+            </div>
           <TripDetails
             departureStation={bikeTrip.departureStationName}
             returnStation={bikeTrip.returnStationName}
             coveredDistance={bikeTrip.coveredDistanceInMeter}
             duration={bikeTrip.durationInSec}
           />
-        </tbody>
-      </table>
+      </div>
     </div>
   );
 };
