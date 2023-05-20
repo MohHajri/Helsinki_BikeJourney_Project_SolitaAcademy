@@ -1,69 +1,71 @@
+:root {
+  /* Color Variables */
+  --primary-color: #eb4d55;
+  --secondary-color: #ff5f6d;
+  --background-color: #f2f2f2;
+  --text-color: #333;
+  --subheading-color: #666;
+}
+
+/* Reset Styles */
 * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-size: 100%;
-      line-height: 1.5;
-      text-decoration: none;
-      color: inherit;
-      outline: none;
-    }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.5;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
 
-    body {
-        font-family: Source Sans Pro;
-    }
+body {
+  font-family: 'Source Sans Pro'
+}
 
+/* Center Text */
 .center-text {
   text-align: center;
   margin-top: 20px;
 }
 
+/* Loading Text */
 .loading-text {
   text-align: center;
   font-weight: bold;
   margin-top: 20px;
 }
 
-.right-section{
+/* Right Section */
+.right-section {
   margin-top: 20rem;
   background-color: #fff;
 }
 
-
-/** FILTER CSS
-  * 
-  */
-
-  
-.filter-form{
-  /* border: 1px solid red; */
+/* Filter Form */
+.filter-form {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 10rem; 
+  grid-gap: 10rem;
   justify-content: center;
   padding: 0 10rem;
-
 }
 
-.filter-title{
-  /* border: 1px solid red; */
-  color:#fff;
+.filter-title {
+  /* Title Text */
+  color: #fff;
   font-size: 3rem;
   text-align: center;
   margin-top: 6rem;
 }
-.search-container{
-   /* border : 1px solid blue; */
-   background-color: #fff;
-  
-}
 
-.search-container,
-.date-filter{
+/* Search Container */
+.search-container {
   display: flex;
   flex-direction: row;
-
+  background-color: #fff;
 }
+
 .search-container,
 .filter-input {
   border-top-left-radius: 5px;
@@ -82,59 +84,76 @@
 
 }
 
-.search-container input{
+
+.search-container input {
   height: auto;
   border-right: none;
   border-top: none;
   border-bottom: none;
-  
 }
 
-.StationHub-info{
-  /* border: 1px solid red; */
+/* Date Filter */
+.date-filter {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Search Button */
+.search-button {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Station Hub Info */
+.StationHub-info {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: .5rem; 
+  grid-gap: 0.5rem;
   justify-content: center;
   padding: 10rem;
+  margin-top: 400px;
+  padding-bottom: 400px;
 }
-.subheading{
-  font-size: .8rem;
-  font-weight:600;
+
+.subheading {
+  /* Subheading Text */
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: #eb4d55;
-  
+  letter-spacing: 0.5rem;
+  text-align: center;
+  color: var(--primary-color);
 }
-.StationHub-info h2{
+
+.StationHub-info h2 {
+  /* Heading Text */
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3rem;
-}
-
-.StationHub-info h2, .subheading{
   text-align: center;
+  color: var(--text-color);
 }
 
-.StationHub-info-text{
+.StationHub-info-text {
+  /* Info Text */
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.5;
   text-align: center;
+  color: var(--text-color);
 }
 
-
-/** PARALLAX CSS
-  * 
-  */
-
-  .parallax-bg {
+/* Parallax Background */
+.parallax-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   min-height: 1000px;
-  background-image: url('../assets/hel.jpg'); 
+  background-image: url('../assets/hel.jpg');
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -142,18 +161,9 @@
   z-index: -1;
 }
 
-.StationHub-info {
-  margin-top: 400px;
-  padding-bottom: 400px;
-}
-
-
-/** STATION_INFO CSS
-* 
-*/
-
+/* Station Info */
 .station-info-container {
-  background-color: #f2f2f2;
+  background-color: var(--background-color);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -166,13 +176,13 @@
 
 .station-info-heading {
   font-size: 32px;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 
 .station-info-address {
   font-size: 18px;
-  color: #666;
+  color: var(--subheading-color);
 }
 
 .station-info-details {
@@ -191,7 +201,7 @@
 .station-info-label {
   display: block;
   font-size: 14px;
-  color: #666;
+  color: var(--subheading-color);
   margin-bottom: 5px;
   text-align: center;
 }
@@ -199,28 +209,23 @@
 .station-info-value {
   display: block;
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
   font-weight: bold;
   text-align: center;
 }
 
-
-/**   TOP_STATIONS CSS
-* 
-*/
-
-
+/* Top Stations */
 .top-stations-container {
   margin-top: 30px;
   padding: 30px;
-  background-color: #f2f2f2;
+  background-color: var(--background-color);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .top-stations-heading {
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 10px;
   text-align: center;
 }
@@ -233,7 +238,7 @@
 .top-stations-item {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #666;
+  color: var(--text-color);
 }
 
 .top-stations-item:before {
