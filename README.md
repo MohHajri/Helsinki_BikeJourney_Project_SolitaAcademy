@@ -100,3 +100,20 @@ The **Bike Journeys** application provides the following features:
 - **Axios**: HTTP client for making API requests.
 - Leaflet: Library for interactive maps.
 - **CSS**: Styling and design of the application.
+
+
+<br>
+<br>
+
+## Snippets
+<br>
+
+![alt text](src\assets\snippets\bike_snippet_1.png)
+
+![alt text](src\assets\snippets\bike_snippet_2.png)
+
+![alt text](src\assets\snippets\bike_snippet_3.png)
+
+![alt text](src\assets\snippets\bike_snippet_4.png)
+
+![alt text](src\assets\snippets\bike_snippet_5.png)
